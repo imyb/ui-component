@@ -1,0 +1,366 @@
+<!doctype html>
+<!--[if lte IE 8]>     <html class="ie ie8 lt-ie8 lt-ie9" lang="ko"> <![endif]-->
+<!--[if IE 9]>         <html class="ie ie9 lt-ie9" lang="ko"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="ko"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>modal</title>
+
+    <meta name="description" content="...">
+    <meta name="keyword" content="...">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../frame_assets/prism/prism.css">
+    <link rel="stylesheet" href="../frame_assets/css/style.css">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!--[if lte IE 8]>
+    <script src="../assets/js/vendor/html5shiv-printshiv.min.js"></script>
+    <script src="../assets/js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .modaltest { z-index: 999999; position: fixed; top: 0; right: 0; padding: 10px; border: 1px solid #ddd; background: rgba(255,255,255,0.6); }
+        .modaltest {}
+    </style>
+</head>
+<body>
+<div class="component-wrapper">
+<div class="component-container">
+
+
+    <section class="component-section">
+        <h1 class="component-title">modal</h1>
+
+        <h2 class="component-title">modal markup</h2>
+
+            <div class="component-preview">
+                <div class="modal-window" id="modal-tmp" role="dialog">
+                    <div class="modal-overlay" aria-hidden="true"></div>
+                    <div class="modal-wrapper">
+                        <div class="modal">
+                            <div class="modal-header">
+                                <h1 class="modal-title">modal-title</h1>
+                                <button type="button" class="modal-close" data-ui-modal="close">modal-close</button>
+                            </div>
+                            <div class="modal-body">
+                                modal-body
+                            </div>
+                            <div class="modal-footer">
+                                modal-footer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-code language-markup"><script type="text/plain">
+                <!-- modal -->
+                <div class="modal-window" id="modal-tmp" role="dialog">
+                    <div class="modal-overlay" aria-hidden="true"></div>
+                    <div class="modal-wrapper">
+                        <div class="modal">
+                            <div class="modal-header">
+                                <h1 class="modal-title">modal-title</h1>
+                                <button type="button" class="modal-close" data-ui-modal="close">modal-close</button>
+                            </div>
+                            <div class="modal-body">
+                                modal-body
+                            </div>
+                            <div class="modal-footer">
+                                modal-footer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </script></div>
+
+
+
+
+        <h2 class="component-title">modal size</h2>
+
+            <div class="component-preview">
+                <div class="modal-window" role="dialog">
+                    <div class="modal-overlay" aria-hidden="true"></div>
+                    <div class="modal-wrapper">
+                        <div class="modal">
+                            <div class="modal-header">
+                                <h1 class="modal-title">modal-title</h1>
+                                <button type="button" class="modal-close" data-ui-modal="close">modal-close</button>
+                            </div>
+                            <div class="modal-body">
+                                modal-body
+                            </div>
+                            <div class="modal-footer">
+                                modal-footer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-window modal-small" role="dialog">
+                    <div class="modal-overlay" aria-hidden="true"></div>
+                    <div class="modal-wrapper">
+                        <div class="modal">
+                            <div class="modal-header">
+                                <h1 class="modal-title">modal-title</h1>
+                                <button type="button" class="modal-close" data-ui-modal="close">modal-close</button>
+                            </div>
+                            <div class="modal-body">
+                                modal-body
+                            </div>
+                            <div class="modal-footer">
+                                modal-footer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-window modal-large" role="dialog">
+                    <div class="modal-overlay" aria-hidden="true"></div>
+                    <div class="modal-wrapper">
+                        <div class="modal">
+                            <div class="modal-header">
+                                <h1 class="modal-title">modal-title</h1>
+                                <button type="button" class="modal-close" data-ui-modal="close">modal-close</button>
+                            </div>
+                            <div class="modal-body">
+                                modal-body
+                            </div>
+                            <div class="modal-footer">
+                                modal-footer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-code language-markup"><script type="text/plain">
+                <div class="modal-window" role="dialog">
+                    ...
+                </div>
+
+                <div class="modal-window modal-small" role="dialog">
+                    ...
+                </div>
+
+                <div class="modal-window modal-large" role="dialog">
+                    ...
+                </div>
+            </script></div>
+
+
+
+
+        <h2 class="component-title">modal methods</h2>
+
+            <div class="component-code language-javascript"><pre><code>
+                /* open */
+                $(document).on('click', '버튼', function() {
+                    $('#modal-tmp').modal('open');
+                });
+
+                /* close */
+                $(document).on('click', '버튼', function() {
+                    $('#modal-tmp').modal('close');
+                });
+            </pre></code></div>
+
+
+
+        <h2 class="component-title">modal events</h2>
+
+            <div class="component-code language-javascript"><pre><code>
+                /* opened */
+                $(document).on('modal:opened','#modal-tmp01', function() {
+                    console.log( e.handleObj.selector + ' : opened' )
+                });
+
+                /* closed */
+                $(document).on('modal:closed','#modal-tmp01', function() {
+                    console.log( e.handleObj.selector + ' : closed' )
+                });
+            </pre></code></div>
+    </section>
+
+
+</div>
+</div>
+
+
+
+
+
+<div class="modaltest">
+    <button type="button" id="modal-btn-test00" class="btn"><span class="btn-text">#modal-tmp00 open</span></button>
+    <button type="button" id="modal-btn-test01" class="btn"><span class="btn-text">#modal-tmp01 open</span></button>
+    <button type="button" id="modal-btn-test02" class="btn"><span class="btn-text">#modal-tmp02 open</span></button>
+    <button type="button" class="btn modal-btn-test03"><span class="btn-text">.modal-tmp03 open</span></button>
+
+    <br>
+    <br>
+
+    <button type="button" id="modal-btn-test00-close" class="btn"><span class="btn-text">#modal-tmp00 close</span></button>
+    <button type="button" id="modal-btn-test01-close" class="btn"><span class="btn-text">#modal-tmp01 close</span></button>
+    <button type="button" id="modal-btn-test02-close" class="btn"><span class="btn-text">#modal-tmp02 close</span></button>
+    <button type="button" class="btn modal-btn-test03-close"><span class="btn-text">.modal-tmp03 close</span></button>
+</div>
+
+
+
+
+<div class="modal-window" id="modal-tmp00" role="dialog">
+    <div class="modal-overlay" aria-hidden="true"></div>
+    <div class="modal-wrapper">
+        <div class="modal">
+            <div class="modal-header">
+                <h1 class="modal-title">modal tmp00</h1>
+                <button type="button" class="modal-close" data-ui-modal="close">modal-close</button>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta veritatis voluptatibus qui laborum, accusamus blanditiis natus. Eaque animi atque, adipisci nemo pariatur explicabo labore ipsum quae porro consectetur, eos. Deserunt itaque mollitia consequuntur neque aperiam, ut vel! Aut tenetur voluptates incidunt nesciunt, repudiandae officia, dicta suscipit pariatur facere numquam temporibus quia! Necessitatibus inventore soluta delectus veniam maxime aperiam magnam perspiciatis nisi quos dolor optio autem debitis deserunt natus assumenda repudiandae voluptatum, temporibus pariatur, vitae labore, deleniti aliquid placeat sit. Reprehenderit cupiditate tempora repudiandae doloribus error at tempore animi enim molestias labore pariatur laudantium dolorem laborum repellendus dolores harum perspiciatis asperiores distinctio iusto porro expedita numquam fugiat, nulla iste nisi. Perspiciatis, illo rerum ipsum cum vel mollitia facere esse autem provident error sapiente velit, illum nihil dolore ab, quisquam incidunt ducimus pariatur perferendis commodi deserunt repellendus laboriosam recusandae tempora. Quos labore blanditiis ut, tempore eum! Repellat atque labore accusamus adipisci ab, fugiat exercitationem! Amet magnam molestiae voluptatibus minus architecto corporis sed ut dignissimos ipsa reiciendis similique, provident quidem reprehenderit quod consequatur nihil facere voluptatum odit molestias in dicta delectus recusandae vel. Deleniti consequatur, laudantium voluptate harum, quibusdam hic. Magni minima non quaerat nobis, ducimus in saepe velit, vel! Reiciendis, corporis, illo.
+
+                <br>
+                <br>
+
+                <button type="button" class="btn" id="modal-close-tmp00"><span class="btn-text">modal-tmp00 close</span></button>
+
+                <br>
+                <br>
+            </div>
+            <div class="modal-footer">
+                modal-footer
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-window modal-small" id="modal-tmp01" role="dialog">
+    <div class="modal-overlay" aria-hidden="true"></div>
+    <div class="modal-wrapper">
+        <div class="modal">
+            <div class="modal-header">
+                <h1 class="modal-title">modal tmp01</h1>
+                <button type="button" class="modal-close" data-ui-modal="close">modal-close</button>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt laudantium explicabo asperiores error optio fugit odit maiores sed at corporis. Laboriosam non, blanditiis dolorem, totam molestias natus, quis aliquam quos pariatur aut sequi excepturi dignissimos enim, perferendis praesentium. Quis consectetur quasi ipsum, placeat dicta. Eaque eos voluptatibus et, minus nobis?
+            </div>
+            <div class="modal-footer">
+                modal-footer
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-window modal-large" id="modal-tmp02" role="dialog">
+    <div class="modal-overlay" aria-hidden="true"></div>
+    <div class="modal-wrapper">
+        <div class="modal">
+            <div class="modal-header">
+                <h1 class="modal-title">modal tmp02</h1>
+                <button type="button" class="modal-close" data-ui-modal="close">modal-close</button>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam laudantium et adipisci deleniti praesentium nostrum odit architecto impedit repudiandae harum ut voluptas magni cum dignissimos veritatis, aspernatur, quam provident non sed quaerat pariatur dolorum. Nesciunt aspernatur dolorum ratione, deserunt qui similique culpa natus itaque atque dolor excepturi, eveniet explicabo architecto eum quos et recusandae minus aperiam est blanditiis iure quae praesentium. Quisquam magni repellat, quos atque pariatur, laborum cupiditate rem dolorum quo perferendis, quas laudantium nam sequi eius. Natus tenetur, voluptate dolorem rerum alias voluptates ipsa aliquam harum laudantium nobis ipsam beatae numquam mollitia reprehenderit dicta animi, a asperiores molestias provident nemo atque nisi recusandae eius, ipsum sunt! Iusto molestiae at voluptatem quibusdam ad rerum molestias quo culpa nesciunt numquam unde laudantium illo, voluptas deleniti vero, dolorem ut sequi quaerat dolore deserunt delectus nihil nobis laboriosam beatae iste. Alias quam repellat maiores distinctio officia totam iste enim aspernatur quidem molestiae, ea suscipit quis, magnam praesentium optio repellendus reiciendis sit est vel quisquam facere amet. Quod alias enim atque, recusandae vero. Numquam doloremque fugiat eius illo id cupiditate consequatur, iste! Nobis, distinctio voluptas! Exercitationem sequi aut iste mollitia dolorum fugit autem, asperiores, blanditiis illo minus voluptate, possimus inventore, dolor dignissimos adipisci
+            </div>
+            <div class="modal-footer">
+                modal-footer
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal-window modal-tmp03" role="dialog">
+    <div class="modal-overlay" aria-hidden="true"></div>
+    <div class="modal-wrapper">
+        <div class="modal">
+            <div class="modal-header">
+                <h1 class="modal-title">modal tmp03</h1>
+                <button type="button" class="modal-close" data-ui-modal="close">modal-close</button>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et quae velit eligendi fugit asperiores culpa esse laboriosam, voluptate dicta repudiandae, modi non consequatur quia ut omnis autem, natus nobis perferendis vero porro labore, quod at. Saepe ab reiciendis facere magni consequatur. Eos nisi mollitia et. Commodi, beatae autem laudantium praesentium.</p><br><br>
+                <p>Consequatur ea adipisci repellat cum, quod eligendi. Nihil velit quam nostrum quis ad non cupiditate aliquam sed labore pariatur esse aperiam, accusamus voluptatibus illo maiores, ut eligendi optio. Dolorum, natus, commodi! Nihil in assumenda id ad, magnam unde ipsam mollitia, harum, ab accusamus commodi saepe et sapiente accusantium iure ipsa.</p><br><br>
+                <p>Deserunt architecto tempore doloremque nulla molestiae. Consequuntur accusantium harum in odio iste distinctio ipsam reiciendis eum modi sed nemo dolores ratione, assumenda, praesentium, tenetur consequatur laudantium maxime soluta dolorem id rerum. Laborum minima, dolorem dolore! Ratione, aperiam tenetur, soluta aliquid, aut qui nostrum impedit repudiandae natus illo quae architecto possimus!</p><br><br>
+                <p>Debitis et laudantium architecto suscipit sit sapiente veritatis maxime magnam ipsum esse maiores eius delectus, illum modi vero hic corporis beatae accusamus ratione! Accusantium illo quis alias atque nesciunt nobis harum maxime fugit voluptate voluptatem incidunt in mollitia commodi pariatur consequatur repudiandae qui, aliquid obcaecati tempora facilis autem. Laudantium, aspernatur.</p><br><br>
+                <p>Animi fuga neque adipisci unde atque corporis, ipsa temporibus tempore iure nisi. Illo sequi eos tempora cum, sapiente voluptas provident quis debitis laborum, aspernatur aliquam totam nesciunt ullam architecto ex reiciendis molestias, eaque tenetur quo distinctio deleniti soluta quam. Facilis mollitia iure nostrum, magnam voluptatibus officia numquam eveniet nulla repellat?</p><br><br>
+                <p>Eligendi temporibus eaque architecto itaque nesciunt! Voluptatem quas nam iusto, temporibus reiciendis beatae neque nostrum voluptate facilis adipisci soluta unde est, aut nisi rem, repudiandae ratione culpa ex. Cumque numquam, animi minima tenetur, delectus expedita officiis praesentium laboriosam laudantium inventore excepturi dolor, assumenda eligendi ut explicabo. Voluptatem, dignissimos fugit aliquam?</p><br><br>
+                <p>Sint explicabo accusantium ad non earum eaque voluptatibus dolorum laboriosam expedita fugiat ducimus quibusdam magni unde illum quis, labore repudiandae provident optio nostrum dicta, voluptate adipisci facere cum! Voluptatem doloremque, nostrum rerum laboriosam? Ex libero harum quia laborum animi, similique autem laudantium excepturi architecto aperiam, aliquam cumque molestias deleniti, iste!</p><br><br>
+                <p>Iusto, corrupti tenetur nesciunt deleniti beatae, numquam harum tempora eveniet odit consectetur suscipit itaque, voluptates obcaecati omnis repellendus, inventore dolorum. Sequi fugiat voluptatem dolorem ipsam unde eos vero porro assumenda, illo totam voluptas iure similique blanditiis iste, consectetur veritatis est velit alias. Nemo vitae minus dolorem illum sapiente maxime temporibus?</p><br><br>
+                <p>Rem doloribus molestiae aliquid error incidunt laborum eius soluta doloremque recusandae, praesentium voluptate itaque, quod totam cumque modi mollitia id voluptatum in sint nemo illo animi perferendis ea unde. Asperiores et, obcaecati quisquam, laboriosam provident laudantium repellendus, reprehenderit a laborum iure eos! Voluptas sunt enim dolore ex, veniam ad laborum.</p><br><br>
+                <p>Dolor fugit officia fugiat architecto, vel, nam facere iste eveniet, eum officiis ratione? Vel inventore illum deleniti hic esse veniam blanditiis, aliquam, nobis recusandae, est porro. Dolores quae earum odio non quas quaerat praesentium mollitia quam assumenda, doloribus impedit sint suscipit, aut accusamus rerum. Aliquid architecto cupiditate odio, nobis tenetur!</p>
+            </div>
+            <div class="modal-footer">
+                modal-footer
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- ========================================
+         javascript
+         ========================================= -->
+    <script src="../frame_assets/prism/prism.js"></script>
+
+    <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+        $(document).on('click', '#modal-btn-test00', function(){
+            $('#modal-tmp00').modal('open');
+        });
+
+        $(document).on('click', '#modal-btn-test01', function(){
+            $('#modal-tmp01').modal('open');
+        });
+
+        $(document).on('click', '#modal-btn-test02', function(){
+            $('#modal-tmp02').modal('open');
+        });
+
+        $(document).on('click', '.modal-btn-test03', function(){
+            $('.modal-tmp03').modal('open');
+        });
+    </script>
+
+    <script>
+        $(document).on('modal:opened','#modal-tmp01', function(e) {
+            console.log( e.handleObj.selector + ' : opened' )
+        });
+
+        $(document).on('modal:closed','#modal-tmp01', function(e) {
+            console.log( e.handleObj.selector + ' : closed' )
+        });
+    </script>
+
+    <script>
+        $(document).on('click', '#modal-btn-test00-close', function(){
+            $('#modal-tmp00').modal('close');
+        });
+
+        $(document).on('click', '#modal-btn-test01-close', function(){
+            $('#modal-tmp01').modal('close');
+        });
+
+        $(document).on('click', '#modal-btn-test02-close', function(){
+            $('#modal-tmp02').modal('close');
+        });
+
+        $(document).on('click', '.modal-btn-test03-close', function(){
+            $('.modal-tmp03').modal('close');
+        });
+    </script>
+</body>
+</html>
