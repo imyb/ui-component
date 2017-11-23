@@ -98,30 +98,30 @@
                 var _this = this;
                 var target = _this._getTarget( element );
 
-                if( target.item.hasClass('active') ) {
+                if( target.item.hasClass('is-active') ) {
                     return;
                 }
 
-                target.item.addClass('active');
+                target.item.addClass('is-active');
 
                 if( target.panel.length ) {
-                    target.panel.addClass('active');
+                    target.panel.addClass('is-active');
                 }
 
-                _this.close( target.item.siblings().filter('.active').children(_this.element) );
+                _this.close( target.item.siblings().filter('.is-active').children(_this.element) );
             },
             close : function(element) {
                 var _this = this;
                 var target = _this._getTarget( element );
 
-                if( !target.item.hasClass('active') ) {
+                if( !target.item.hasClass('is-active') ) {
                     return;
                 }
 
-                target.item.removeClass('active');
+                target.item.removeClass('is-active');
 
                 if( target.panel.length ) {
-                    target.panel.removeClass('active');
+                    target.panel.removeClass('is-active');
                 }
             },
             _getTarget : function(element) {
@@ -160,8 +160,8 @@
 
         var Selector = {
             WRAPPER         : '.wrapper',
-            MODAL_WINDOW    : '.modal-window',
-            MODAL_WRAPPER   : '.modal-wrapper',
+            MODAL           : '.modal',
+            MODAL_WINDOW    : '.modal__window',
             MODAL_OPEN      : '[data-ui-modal="open"]',
             MODAL_CLOSE     : '[data-ui-modal="close"]'
         }
@@ -219,9 +219,9 @@
                 $(target).addClass(State.IS_CURRENT);
                 $(target).removeClass(State.IS_PREVIUS);
 
-                $(target).siblings(Selector.MODAL_WINDOW + '.' + State.IS_ACTIVE).removeClass(State.IS_CURRENT);
-                $(target).siblings(Selector.MODAL_WINDOW + '.' + State.IS_ACTIVE).removeClass(State.IS_PREVIUS);
-                $(target).siblings(Selector.MODAL_WINDOW + '.' + State.IS_ACTIVE).last().addClass(State.IS_PREVIUS);
+                $(target).siblings(Selector.MODAL + '.' + State.IS_ACTIVE).removeClass(State.IS_CURRENT);
+                $(target).siblings(Selector.MODAL + '.' + State.IS_ACTIVE).removeClass(State.IS_PREVIUS);
+                $(target).siblings(Selector.MODAL + '.' + State.IS_ACTIVE).last().addClass(State.IS_PREVIUS);
 
                 if( _this.transition ) {
                     $(target).transitionEndAfter(transitionComplete, DEFAULT_DURATION);
@@ -236,13 +236,13 @@
                 if( !$(target).hasClass(State.IS_OPENED) ) {
                     $(target).attr('data-scrolltop', 0);
                 } else {
-                    $(target).find(Selector.MODAL_WRAPPER).scrollTop( $(target).attr('data-scrolltop') );
+                    $(target).find(Selector.MODAL_WINDOW).scrollTop( $(target).attr('data-scrolltop') );
                 }
 
-                previus = $(target).siblings(Selector.MODAL_WINDOW + '.' + State.IS_PREVIUS)[0];
+                previus = $(target).siblings(Selector.MODAL + '.' + State.IS_PREVIUS)[0];
 
                 if( $(previus).length ) {
-                    $(previus).attr('data-scrolltop', $(previus).find(Selector.MODAL_WRAPPER).scrollTop());
+                    $(previus).attr('data-scrolltop', $(previus).find(Selector.MODAL_WINDOW).scrollTop());
                 }
 
                 $(target).off(Event.CLICK_CLOSE).on(Event.CLICK_CLOSE, Selector.MODAL_CLOSE, function() {
@@ -267,9 +267,9 @@
                 $(target).removeClass(State.IS_CURRENT);
                 $(target).removeClass(State.IS_PREVIUS);
 
-                $(target).siblings(Selector.MODAL_WINDOW + '.' + State.IS_ACTIVE).last().addClass(State.IS_CURRENT);
-                $(target).siblings(Selector.MODAL_WINDOW + '.' + State.IS_ACTIVE).removeClass(State.IS_PREVIUS);
-                $(target).siblings(Selector.MODAL_WINDOW + '.' + State.IS_CURRENT).prevAll('.' + State.IS_ACTIVE).first().addClass(State.IS_PREVIUS);
+                $(target).siblings(Selector.MODAL + '.' + State.IS_ACTIVE).last().addClass(State.IS_CURRENT);
+                $(target).siblings(Selector.MODAL + '.' + State.IS_ACTIVE).removeClass(State.IS_PREVIUS);
+                $(target).siblings(Selector.MODAL + '.' + State.IS_CURRENT).prevAll('.' + State.IS_ACTIVE).first().addClass(State.IS_PREVIUS);
 
                 if( _this.transition ) {
                     $(target).transitionEndAfter(transitionComplete, DEFAULT_DURATION);
@@ -280,18 +280,18 @@
                     $(target).addClass(State.IS_CLOSED);
                     $(target).trigger(Event.CLOSED);
 
-                    if( !$(target).siblings(Selector.MODAL_WINDOW + '.' + State.IS_OPENED).length ) {
+                    if( !$(target).siblings(Selector.MODAL + '.' + State.IS_OPENED).length ) {
                         $(document.body).removeClass(State.IS_MODAL_OPEN);
                     }
                 }
 
                 $(target).attr('data-scrolltop', 0);
 
-                current = $(target).siblings(Selector.MODAL_WINDOW + '.' + State.IS_CURRENT)[0];
+                current = $(target).siblings(Selector.MODAL + '.' + State.IS_CURRENT)[0];
 
                 if( $(current).length ) {
-                    $(current).attr('data-scrolltop', $(current).find(Selector.MODAL_WRAPPER).scrollTop())
-                    $(current).find(Selector.MODAL_WRAPPER).scrollTop( $(current).attr('data-scrolltop') );
+                    $(current).attr('data-scrolltop', $(current).find(Selector.MODAL_WINDOW).scrollTop())
+                    $(current).find(Selector.MODAL_WINDOW).scrollTop( $(current).attr('data-scrolltop') );
                 } else {
                     $(window).scrollTop(_this.scrolltop);
                 }

@@ -2,17 +2,17 @@
 
     'use strict';
 
-    window.CP = window.CP || {};
+    window.DOCS = window.DOCS || {};
 
     $(function() {
-        CP.menu.init();
+        DOCS.menu.init();
     });
 
 
-    CP.menu = {
-        element : '.cpframe-menu',
-        menuitem : '.cpframe-menu > ul > li',
-        viewer : '.cpframe-viewer',
+    DOCS.menu = {
+        element : '.docs-frame__menu',
+        menuitem : '.docs-frame__menu__item',
+        viewer : '.docs-frame__viewer',
         init : function() {
 
             var _this = this;
@@ -23,10 +23,10 @@
                     $anchor = $(this).children('a');
 
                 if( $anchor.filter('[href^=#]').length ) {
-                    $item.addClass('disabled');
+                    $item.addClass('is-disabled');
                 }
 
-                if( $item.hasClass('active') ) {
+                if( $item.hasClass('is-active') ) {
                     _this.open( $item );
                 }
             });
@@ -48,21 +48,21 @@
             var _this = this,
                 $element = $(element);
 
-            if( $element.filter('.disabled').length ) {
+            if( $element.filter('.is-disabled').length ) {
                 return;
             }
 
-            _this.close( $element.siblings().filter('.active') );
+            _this.close( $element.siblings().filter('.is-active') );
             _this.view( $element );
 
-            $element.addClass('active');
+            $element.addClass('is-active');
         },
         close : function( element ) {
 
             var _this = this,
                 $element = $(element);
 
-            $element.removeClass('active');
+            $element.removeClass('is-active');
         },
         view : function( element ) {
 

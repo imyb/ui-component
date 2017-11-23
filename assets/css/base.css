@@ -65,6 +65,10 @@ body {
     line-height: normal;
 }
 
+html, body {
+    height:  100%;
+}
+
 html,
 button,
 input,

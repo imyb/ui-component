@@ -11,9 +11,6 @@
     <meta name="keyword" content="...">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="../frame_assets/prism/prism.css">
-    <link rel="stylesheet" href="../frame_assets/css/style.css">
-
     <link rel="stylesheet" href="../assets/css/style.css">
 
     <!--[if lte IE 8]>
@@ -21,34 +18,34 @@
     <script src="../assets/js/vendor/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
-<div class="component-wrapper">
-<div class="component-container">
+<body class="docs">
+<div class="docs-component__wrapper">
+<div class="docs-component__container">
 
 
-    <section class="component-section">
-        <h1 class="component-title">input</h1>
+    <section class="docs-component__section">
+        <h1 class="docs-component__title">input</h1>
 
-        <h2 class="component-title">input-text</h2>
+        <h2 class="docs-component__title">input-text</h2>
 
-            <div class="component-preview">
+            <div class="docs-component__preview">
                 <div class="input-text"><input type="text"></div>
-                <div class="input-text readonly"><input type="text" value="readonly" readonly></div>
-                <div class="input-text disabled"><input type="text" value="disabled" disabled></div>
+                <div class="input-text is-readonly"><input type="text" value="readonly" readonly></div>
+                <div class="input-text is-disabled"><input type="text" value="disabled" disabled></div>
             </div>
 
-            <div class="component-code language-markup"><script type="text/plain">
+            <div class="docs-component__code language-markup"><script type="text/plain">
                 <div class="input-text"><input type="text"></div>
-                <div class="input-text readonly"><input type="text" value="readonly" readonly></div>
-                <div class="input-text disabled"><input type="text" value="disabled" disabled></div>
+                <div class="input-text is-readonly"><input type="text" value="readonly" readonly></div>
+                <div class="input-text is-disabled"><input type="text" value="disabled" disabled></div>
             </script></div>
 
 
 
 
-        <h2 class="component-title">input-select</h2>
+        <h2 class="docs-component__title">input-select</h2>
 
-            <div class="component-preview">
+            <div class="docs-component__preview">
                 <div class="input-select">
                     <select>
                         <option value="">select</option>
@@ -57,7 +54,7 @@
                     </select>
                 </div>
 
-                <div class="input-select disabled">
+                <div class="input-select is-disabled">
                     <select disabled>
                         <option value="">select</option>
                         <option value="">select2</option>
@@ -66,7 +63,7 @@
                 </div>
             </div>
 
-            <div class="component-code language-markup"><script type="text/plain">
+            <div class="docs-component__code language-markup"><script type="text/plain">
                 <div class="input-select">
                     <select>
                         <option value="">select</option>
@@ -75,7 +72,7 @@
                     </select>
                 </div>
 
-                <div class="input-select disabled">
+                <div class="input-select is-disabled">
                     <select disabled>
                         <option value="">select</option>
                         <option value="">select2</option>
@@ -87,199 +84,199 @@
 
 
 
-        <h2 class="component-title">input-check</h2>
+        <h2 class="docs-component__title">input-check</h2>
 
-            <div class="component-preview">
+            <div class="docs-component__preview">
                 <label class="input-check">
                     <input type="checkbox"><i aria-hidden="true"></i>
-                    <span class="label-text">checkbox</span>
+                    <span class="input-check__text">checkbox</span>
                 </label>
 
                 <label class="input-check">
                     <input type="checkbox" checked><i aria-hidden="true"></i>
-                    <span class="label-text">checkbox</span>
+                    <span class="input-check__text">checkbox</span>
                 </label>
 
                 <label class="input-check">
                     <input type="checkbox" disabled><i aria-hidden="true"></i>
-                    <span class="label-text">disabled</span>
+                    <span class="input-check__text">disabled</span>
                 </label>
 
                 <label class="input-check">
                     <input type="checkbox" checked disabled><i aria-hidden="true"></i>
-                    <span class="label-text">disabled</span>
+                    <span class="input-check__text">disabled</span>
                 </label>
             </div>
 
-            <div class="component-preview">
+            <div class="docs-component__preview">
                 <label class="input-check">
                     <input type="checkbox"><i aria-hidden="true"></i>
-                    <span class="label-text visuallyhidden">checkbox</span>
+                    <span class="input-check__text is-hidden">checkbox</span>
                 </label>
 
                 <label class="input-check">
                     <input type="checkbox" checked><i aria-hidden="true"></i>
-                    <span class="label-text visuallyhidden">checkbox</span>
+                    <span class="input-check__text is-hidden">checkbox</span>
                 </label>
 
                 <label class="input-check">
                     <input type="checkbox" disabled><i aria-hidden="true"></i>
-                    <span class="label-text visuallyhidden">disabled</span>
+                    <span class="input-check__text is-hidden">disabled</span>
                 </label>
 
                 <label class="input-check">
                     <input type="checkbox" checked disabled><i aria-hidden="true"></i>
-                    <span class="label-text visuallyhidden">disabled</span>
+                    <span class="input-check__text is-hidden">disabled</span>
                 </label>
             </div>
 
-            <div class="component-code language-markup"><script type="text/plain">
+            <div class="docs-component__code language-markup"><script type="text/plain">
                  <label class="input-check">
                     <input type="checkbox"><i aria-hidden="true"></i>
-                    <span class="label-text">checkbox</span>
+                    <span class="input-check__text">checkbox</span>
                 </label>
 
                 <label class="input-check">
                     <input type="checkbox" checked><i aria-hidden="true"></i>
-                    <span class="label-text">checkbox</span>
+                    <span class="input-check__text">checkbox</span>
                 </label>
 
                 <label class="input-check">
                     <input type="checkbox" disabled><i aria-hidden="true"></i>
-                    <span class="label-text">disabled</span>
+                    <span class="input-check__text">disabled</span>
                 </label>
 
                 <label class="input-check">
                     <input type="checkbox" checked disabled><i aria-hidden="true"></i>
-                    <span class="label-text">disabled</span>
+                    <span class="input-check__text">disabled</span>
                 </label>
 
                 <label class="input-check">
                     <input type="checkbox"><i aria-hidden="true"></i>
-                    <span class="label-text visuallyhidden">checkbox visuallyhidden</span>
+                    <span class="input-check__text is-hidden">checkbox visuallyhidden</span>
                 </label>
             </script></div>
 
 
 
 
-        <h2 class="component-title">input-radio</h2>
+        <h2 class="docs-component__title">input-radio</h2>
 
-            <div class="component-preview">
+            <div class="docs-component__preview">
                 <label class="input-radio">
                     <input type="radio" name="tmp-radio"><i aria-hidden="true"></i>
-                    <span class="label-text">radio</span>
+                    <span class="input-radio__text">radio</span>
                 </label>
 
                 <label class="input-radio">
                     <input type="radio" name="tmp-radio" checked><i aria-hidden="true"></i>
-                    <span class="label-text">radio</span>
+                    <span class="input-radio__text">radio</span>
                 </label>
 
                 <label class="input-radio">
                     <input type="radio" name="tmp-radio2" disabled><i aria-hidden="true"></i>
-                    <span class="label-text">disabled</span>
+                    <span class="input-radio__text">disabled</span>
                 </label>
 
                 <label class="input-radio">
                     <input type="radio" name="tmp-radio2" checked disabled><i aria-hidden="true"></i>
-                    <span class="label-text">disabled</span>
+                    <span class="input-radio__text">disabled</span>
                 </label>
             </div>
 
-            <div class="component-preview">
+            <div class="docs-component__preview">
                 <label class="input-radio">
                     <input type="radio" name="tmp-radio"><i aria-hidden="true"></i>
-                    <span class="label-text visuallyhidden">radio</span>
+                    <span class="input-radio__text is-hidden">radio</span>
                 </label>
 
                 <label class="input-radio">
                     <input type="radio" name="tmp-radio" checked><i aria-hidden="true"></i>
-                    <span class="label-text visuallyhidden">radio</span>
+                    <span class="input-radio__text is-hidden">radio</span>
                 </label>
 
                 <label class="input-radio">
                     <input type="radio" name="tmp-radio2" disabled><i aria-hidden="true"></i>
-                    <span class="label-text visuallyhidden">disabled</span>
+                    <span class="input-radio__text is-hidden">disabled</span>
                 </label>
 
                 <label class="input-radio">
                     <input type="radio" name="tmp-radio2" checked disabled><i aria-hidden="true"></i>
-                    <span class="label-text visuallyhidden">disabled</span>
+                    <span class="input-radio__text is-hidden">disabled</span>
                 </label>
             </div>
 
-            <div class="component-code language-markup"><script type="text/plain">
+            <div class="docs-component__code language-markup"><script type="text/plain">
                 <label class="input-radio">
                     <input type="radio" name="tmp-radio"><i aria-hidden="true"></i>
-                    <span class="label-text">radio</span>
+                    <span class="input-radio__text">radio</span>
                 </label>
 
                 <label class="input-radio">
                     <input type="radio" name="tmp-radio" checked><i aria-hidden="true"></i>
-                    <span class="label-text">radio</span>
+                    <span class="input-radio__text">radio</span>
                 </label>
 
                 <label class="input-radio">
                     <input type="radio" name="tmp-radio2" disabled><i aria-hidden="true"></i>
-                    <span class="label-text">disabled</span>
+                    <span class="input-radio__text">disabled</span>
                 </label>
 
                 <label class="input-radio">
                     <input type="radio" name="tmp-radio2" checked disabled><i aria-hidden="true"></i>
-                    <span class="label-text">disabled</span>
+                    <span class="input-radio__text">disabled</span>
                 </label>
 
                 <label class="input-radio">
                     <input type="radio" name="tmp-radio"><i aria-hidden="true"></i>
-                    <span class="label-text visuallyhidden">radio visuallyhidden</span>
+                    <span class="input-radio__text is-hidden">radio visuallyhidden</span>
                 </label>
             </script></div>
 
 
 
 
-        <h2 class="component-title">input-checkgroup</h2>
+        <h2 class="docs-component__title">input-checkgroup</h2>
 
-            <div class="component-preview">
+            <div class="docs-component__preview">
                 <div class="input-checkgroup">
                     <label class="input-check">
                         <input type="checkbox"><i aria-hidden="true"></i>
-                        <span class="label-text">checkbox</span>
+                        <span class="input-check__text">checkbox</span>
                     </label>
 
                     <label class="input-check">
                         <input type="checkbox"><i aria-hidden="true"></i>
-                        <span class="label-text">checkbox</span>
+                        <span class="input-check__text">checkbox</span>
                     </label>
 
                     <label class="input-check">
                         <input type="checkbox"><i aria-hidden="true"></i>
-                        <span class="label-text">checkbox</span>
+                        <span class="input-check__text">checkbox</span>
                     </label>
                 </div>
             </div>
 
-            <div class="component-preview">
+            <div class="docs-component__preview">
                 <div class="input-checkgroup">
                     <label class="input-radio">
                         <input type="radio" name="tmp-radio3"><i aria-hidden="true"></i>
-                        <span class="label-text">radio</span>
+                        <span class="input-radio__text">radio</span>
                     </label>
 
                     <label class="input-radio">
                         <input type="radio" name="tmp-radio3"><i aria-hidden="true"></i>
-                        <span class="label-text">radio</span>
+                        <span class="input-radio__text">radio</span>
                     </label>
 
                     <label class="input-radio">
                         <input type="radio" name="tmp-radio3"><i aria-hidden="true"></i>
-                        <span class="label-text">radio</span>
+                        <span class="input-radio__text">radio</span>
                     </label>
                 </div>
             </div>
 
-            <div class="component-code language-markup"><script type="text/plain">
+            <div class="docs-component__code language-markup"><script type="text/plain">
                  <div class="input-checkgroup">
                     input-check, input-radio...
                  </div>
@@ -291,12 +288,12 @@
 
 
 
-    <section class="component-section">
-        <h1 class="component-title">form</h1>
+    <section class="docs-component__section">
+        <h1 class="docs-component__title">form</h1>
 
-            <h2 class="component-title">fielditem</h2>
+            <h2 class="docs-component__title">fielditem</h2>
 
-            <div class="component-preview">
+            <div class="docs-component__preview">
                 <div class="formfield">
                     <div class="fielditem col-6">
                         <div class="input-text"><input type="text"></div>
@@ -361,7 +358,7 @@
                     <div class="fielditem addon">
                         <label class="input-check">
                             <input type="checkbox"><i aria-hidden="true"></i>
-                            <span class="label-text">checkbox</span>
+                            <span class="input-check__text">checkbox</span>
                         </label>
                     </div>
                 </div>
@@ -385,7 +382,7 @@
                 </div>
             </div>
 
-            <div class="component-code language-markup"><script type="text/plain">
+            <div class="docs-component__code language-markup"><script type="text/plain">
                 <div class="formfield">
                     <div class="fielditem">...</div>
                     <div class="fielditem">...</div>
@@ -406,8 +403,7 @@
     <!-- ========================================
          javascript
          ========================================= -->
-    <script src="../frame_assets/prism/prism.js"></script>
-
+    <script src="../assets/js/vendor/prism.js"></script>
     <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="../assets/js/plugins.js"></script>
     <script src="../assets/js/script.js"></script>
