@@ -133,7 +133,6 @@
     .input-check > input[type="checkbox"][disabled] + i { opacity: 0.5; }
     .input-check > input[type="checkbox"][disabled] + i:after {  }
     .input-check > input[type="checkbox"][disabled] + i + .input-check__text { opacity: 0.3; }
-    .input-check__text.is-hidden { overflow: hidden; position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; white-space: nowrap; clip: rect(0 0 0 0); -webkit-clip-path: inset(50%); clip-path: inset(50%); }
 
 
 
@@ -150,7 +149,6 @@
     .input-radio > input[type="radio"][disabled] + i { opacity: 0.5; }
     .input-radio > input[type="radio"][disabled] + i:after {  }
     .input-radio > input[type="radio"][disabled] + i + .input-radio__text { opacity: 0.3; }
-    .input-radio__text.is-hidden { overflow: hidden; position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; white-space: nowrap; clip: rect(0 0 0 0); -webkit-clip-path: inset(50%); clip-path: inset(50%); }
 
 
 /* input-checkgroup
