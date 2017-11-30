@@ -1,30 +1,11 @@
-<!doctype html>
-<!--[if lte IE 8]>     <html class="ie ie8 lt-ie8 lt-ie9" lang="ko"> <![endif]-->
-<!--[if IE 9]>         <html class="ie ie9 lt-ie9" lang="ko"> <![endif]-->
-<!--[if gt IE 9]><!--> <html lang="ko"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>modal</title>
-
-    <meta name="description" content="...">
-    <meta name="keyword" content="...">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="stylesheet" href="../assets/css/style.css">
-
-    <!--[if lte IE 8]>
-    <script src="../assets/js/vendor/html5shiv-printshiv.min.js"></script>
-    <script src="../assets/js/vendor/respond.min.js"></script>
-    <![endif]-->
-
+<% locals.setLayout('_layout/_default.ejs'); -%>
+<% locals.block('title', 'modal') -%>
     <style>
-        .modaltest { z-index: 999999; position: fixed; top: 0; right: 0; padding: 10px; border: 1px solid #ddd; background: rgba(255,255,255,0.6); }
-        .modaltest {}
+    .modaltest { z-index: 999999; position: fixed; top: 0; right: 0; padding: 10px; border: 1px solid #ddd; background: rgba(255,255,255,0.6); }
     </style>
 </head>
 <body class="docs">
-<div class="docs-component__wrapper">
+<div class="docs-component">
 <div class="docs-component__container">
 
 
@@ -184,11 +165,9 @@
     </section>
 
 
+
 </div>
 </div>
-
-
-
 
 
 <div class="modaltest">
@@ -205,8 +184,6 @@
     <button type="button" id="modal-btn-test02-close" class="btn"><span class="btn-text">#modal-tmp02 close</span></button>
     <button type="button" class="btn modal-btn-test03-close"><span class="btn-text">.modal-tmp03 close</span></button>
 </div>
-
-
 
 
 <div class="modal" id="modal-tmp00" role="dialog">
@@ -274,9 +251,6 @@
 </div>
 
 
-
-
-
 <div class="modal modal-tmp03" role="dialog">
     <div class="modal__overlay" aria-hidden="true"></div>
     <div class="modal__window">
@@ -304,14 +278,7 @@
     </div>
 </div>
 
-
-    <!-- ========================================
-         javascript
-         ========================================= -->
-    <script src="../assets/js/vendor/prism.js"></script>
-    <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="../assets/js/plugins.js"></script>
-    <script src="../assets/js/script.js"></script>
+<%- locals.include('_include/_footAssets.ejs') %>
 
     <script>
         $(document).on('click', '#modal-btn-test00', function(){

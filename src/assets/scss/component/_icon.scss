@@ -1,0 +1,10 @@
+/* ==========================================================================
+   icon
+   ========================================================================== */
+.iconset { display: inline-block; overflow: hidden; position: relative; min-width: 0; max-width: none; width: auto; min-height: 0; max-height: none; height: auto; font-size: 0; line-height: 0; background-repeat: no-repeat; background-attachment: scroll; background-position: 0 0; background-size: 100% 100%; vertical-align: middle; }
+    .icon-sample { width: 18px; height: 18px; background: #999; border-radius: 50%; }
+    .icon-heart { width: 16px; height: 16px; background-image: url('../img/icon/heart.png'); }
+    .icon-close { width: 16px; height: 16px; background-image: url('../img/icon/close.png'); }
+    .icon-checked { width: 16px; height: 16px; background-image: url('../img/icon/checked.png'); }
+    .icon-chevron-left { width: 16px; height: 16px; background-image: url('../img/icon/chevron-left.png'); }
+    .icon-chevron-right { width: 16px; height: 16px; background-image: url('../img/icon/chevron-right.png'); }

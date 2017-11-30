@@ -1,0 +1,56 @@
+/* ==========================================================================
+   modal
+   ========================================================================== */
+body.modal-open { overflow: hidden; }
+.modal { z-index: 9000; position: fixed; top: 0; left: 0; width: 100%; height: 100%; }
+    .modal__overlay { z-index: 7000; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; opacity: 0.6; }
+    .modal__window { z-index: 8000; overflow: auto; position: fixed; top: 0; left: 0; width: 100%; height: 100%; padding: 0 20px; text-align: center; white-space: nowrap; }
+    .modal__window:before { content: ''; display: inline-block; width: 1px; height: 100%; margin-right: -1px; vertical-align: middle; }
+    .modal__box { display: inline-block; position: relative; max-width: 100%; min-width: 320px; margin: 20px 0; background: #fff; box-shadow: 0 0 15px rgba(0,0,0,0.4); text-align: left; white-space: normal; vertical-align: middle; }
+    .modal__header { position: relative; height: 60px; padding-right: 60px; background: #ddd; }
+    .modal__title { display: block; padding: 0 20px; line-height: 60px; font-size: 20px; font-weight: normal; }
+    .modal__close { position: absolute; top: 0; right: 0; width: 60px; height: 60px; border: 0; background: url('../img/icon/modal-close.png') no-repeat 50% 50%; font-size: 0; line-height: 0; cursor: pointer; }
+    .modal__body { padding: 20px; }
+    .modal__footer { padding: 20px; }
+
+    /* active */
+    .modal { visibility: hidden; }
+    .modal .modal__overlay { opacity: 0; }
+    .modal .modal__box { opacity: 0; }
+
+    .modal.is-active { visibility: visible; }
+    .modal.is-active .modal__overlay { opacity: 0.6; }
+    .modal.is-active .modal__box { opacity: 1; }
+
+        /* transition */
+        .modal {
+            transition: visibility 0s ease 0.3s;
+        }
+        .modal.is-active {
+            transition: visibility 0s ease 0s;
+        }
+
+        .modal .modal__overlay,
+        .modal.is-active .modal__overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal .modal__box,
+        .modal.is-active .modal__box {
+            transition: opacity 0.3s ease;
+        }
+
+    /* size */
+    .modal__box { width: 600px; }
+    .modal-xsmall .modal__box {}
+    .modal-small .modal__box { width: 320px; }
+    .modal-medium .modal__box { width: 600px; }
+    .modal-large .modal__box { width: 800px; }
+    .modal-xlarge .modal__box {}
+
+
+/* in component-preview
+----------------------------------- */
+.docs-component__preview .modal { visibility: visible; position: relative; }
+.docs-component__preview .modal__overlay { display: none; }
+.docs-component__preview .modal__window { position: relative; text-align: left; }
+.docs-component__preview .modal__box { opacity: 1; }

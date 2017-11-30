@@ -1,0 +1,10 @@
+/* ==========================================================================
+   breadcrumb
+   ========================================================================== */
+.breadcrumb {  }
+    .breadcrumb__item { display: inline-block; margin-left: 5px; color: #333; vertical-align: middle; }
+    .breadcrumb__item:before { content: '/'; display: inline-block; margin-right: 9px; vertical-align: middle; }
+    .breadcrumb__item:first-child { margin-left: 0; }
+    .breadcrumb__item:first-child:before { display: none; }
+    .breadcrumb__item.is-active { font-weight: bold; }
+    .breadcrumb__item.is-active:before { font-weight: normal; }

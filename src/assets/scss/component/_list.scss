@@ -1,0 +1,21 @@
+/* ==========================================================================
+   list
+   ========================================================================== */
+.list {}
+    .list ul { list-style: none; margin: 0; padding: 0; }
+    .list__item { position: relative; padding-left: 10px; line-height: 20px; vertical-align: middle; }
+    .list__item:before { content: ''; display: inline-block; overflow: hidden; position: absolute; top: 8px; left: 0; width: 4px; height: 4px; background: #000; }
+    .list__item__num { display: table-cell; padding-right: 4px; font-weight: bold; white-space: nowrap; vertical-align: top; }
+    .list__item__head { display: table-cell; padding-right: 4px; font-weight: bold; white-space: nowrap; vertical-align: top; }
+    .list__item__body { display: table-cell; vertical-align: middle; }
+
+    /* type */
+    /* none */
+    .list-none {}
+        .list-none .list__item { padding-left: 0; }
+        .list-none .list__item:before { display: none; }
+
+    /* numberic */
+    .list-numberic {}
+        .list-numberic .list__item { padding-left: 0; }
+        .list-numberic .list__item:before { display: none; }
