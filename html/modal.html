@@ -14,17 +14,14 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 
     <!--[if lte IE 8]>
-    <script src="../assets/js/vendor/html5shiv-printshiv.min.js"></script>
-    <script src="../assets/js/vendor/respond.min.js"></script>
+    <script src="../assets/js/vendor/preRender.polyfill.js"></script>
     <![endif]-->
-
     <style>
-        .modaltest { z-index: 999999; position: fixed; top: 0; right: 0; padding: 10px; border: 1px solid #ddd; background: rgba(255,255,255,0.6); }
-        .modaltest {}
+    .modaltest { z-index: 999999; position: fixed; top: 0; right: 0; padding: 10px; border: 1px solid #ddd; background: rgba(255,255,255,0.6); }
     </style>
 </head>
 <body class="docs">
-<div class="docs-component__wrapper">
+<div class="docs-component">
 <div class="docs-component__container">
 
 
@@ -184,11 +181,9 @@
     </section>
 
 
+
 </div>
 </div>
-
-
-
 
 
 <div class="modaltest">
@@ -205,8 +200,6 @@
     <button type="button" id="modal-btn-test02-close" class="btn"><span class="btn-text">#modal-tmp02 close</span></button>
     <button type="button" class="btn modal-btn-test03-close"><span class="btn-text">.modal-tmp03 close</span></button>
 </div>
-
-
 
 
 <div class="modal" id="modal-tmp00" role="dialog">
@@ -274,9 +267,6 @@
 </div>
 
 
-
-
-
 <div class="modal modal-tmp03" role="dialog">
     <div class="modal__overlay" aria-hidden="true"></div>
     <div class="modal__window">
@@ -304,14 +294,11 @@
     </div>
 </div>
 
-
     <!-- ========================================
          javascript
          ========================================= -->
-    <script src="../assets/js/vendor/prism.js"></script>
-    <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="../assets/js/plugins.js"></script>
-    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/vendor.js"></script>
+    <script src="../assets/js/bundle.js"></script>
 
     <script>
         $(document).on('click', '#modal-btn-test00', function(){
