@@ -107,12 +107,14 @@ gulp.task('scripts', ['scripts:vendor', 'scripts:pre_render_polyfill'], function
 gulp.task('scripts:vendor', function() {
     return gulp.src( PATH.SRC.JS_VENDOR )
         .pipe(concat('vendor.js'))
+        .pipe(gutil.env.type == 'prod' ? uglify() : gutil.noop())
         .pipe(gutil.env.type == 'prod' ? gulp.dest( PATH.DIST.JS ) : gulp.dest( PATH.TMP.JS ))
 });
 
 gulp.task('scripts:pre_render_polyfill', function() {
     return gulp.src( PATH.SRC.JS_PRE_RENDER_POLYFILL )
         .pipe(concat('preRender.polyfill.js'))
+        .pipe(gutil.env.type == 'prod' ? uglify() : gutil.noop())
         .pipe(gutil.env.type == 'prod' ? gulp.dest( PATH.DIST.JS ) : gulp.dest( PATH.TMP.JS ))
 });
 
