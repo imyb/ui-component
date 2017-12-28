@@ -2,37 +2,111 @@
    tab
    ========================================================================== */
 
-/* tablist
------------------------------------ */
-.tablist { position: relative; border-bottom: 1px solid; }
-    .tablist > ul { display: table; table-layout: fixed; width: 100%; margin-bottom: -1px; vertical-align: bottom; }
-    .tablist__item { display: table-cell; position: relative; height: 40px; background: #fff; vertical-align: bottom; }
-    .tablist__item > a { overflow: hidden; display: block; height: 100%; margin-right: -1px; padding: 5px 10px; border: 1px solid #ddd; border-bottom: 1px solid #000; color: #999; text-align: center; white-space: nowrap; text-overflow: ellipsis; }
-    .tablist__item > a:before { content: ''; display: inline-block; width: 1px; height: 100%; margin-right: -1px; vertical-align: middle; }
-    .tablist__item > a > span { display: inline-block; vertical-align: middle; }
-    .tablist__item.is-active { z-index: 2; }
-    .tablist__item.is-active > a { border: 1px solid #000; border-bottom: 1px solid #fff; color: #333; }
+/**
+ * tablist
+ */
+.tablist {
+    position: relative;
+    border-bottom: 1px solid;
+}
+.tablist > ul {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: -1px;
+    vertical-align: bottom;
+}
+.tablist__item {
+    display: table-cell;
+    position: relative;
+    height: 40px;
+    background: #fff;
+    vertical-align: bottom;
+}
+.tablist__item > a {
+    overflow: hidden;
+    display: block;
+    height: 100%;
+    margin-right: -1px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #000;
+    color: #999;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.tablist__item > a:before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    margin-right: -1px;
+    vertical-align: middle;
+}
+.tablist__item > a > span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.tablist__item.is-active {
+    z-index: 2;
+}
+.tablist__item.is-active > a {
+    border: 1px solid #000;
+    border-bottom: 1px solid #fff;
+    color: #333;
+}
 
-    /* type */
-    /* inline */
-    .tablist-inline {  }
-        .tablist-inline > ul { display: inline-table; width: auto; }
+/* type */
+/* inline */
+.tablist-inline {
+ }
+.tablist-inline > ul {
+    display: inline-table;
+    width: auto;
+}
 
-    /* scroll */
-    .tablist-scroll { overflow-y: hidden; overflow-x: auto; }
-        .tablist-scroll > ul { display: inline-table; width: auto; }
+/* scroll */
+.tablist-scroll {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.tablist-scroll > ul {
+    display: inline-table;
+    width: auto;
+}
 
 
-/* tabcontent
------------------------------------ */
-.tabcontent { position: relative; }
-.tabpanel { overflow: hidden; visibility: hidden; position: absolute; top: 0; left: 0; width: 0; height: 0; padding: 20px 10px; opacity: 0; }
-    .tabpanel.is-active { visibility: visible; position: relative; width: auto; height: auto; opacity: 1; }
 
-    /* transition */
-    .tabpanel {
-        transition: opacity 0.3s ease, visibility 0s ease 0.3s;
-    }
-    .tabpanel.is-active {
-        transition: opacity 0.3s ease;
-    }
+/**
+ * tabcontent
+ */
+.tabcontent {
+    position: relative;
+}
+.tabpanel {
+    overflow: hidden;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    padding: 20px 10px;
+    opacity: 0;
+}
+.tabpanel.is-active {
+    visibility: visible;
+    position: relative;
+    width: auto;
+    height: auto;
+    opacity: 1;
+}
+
+/* transition */
+.tabpanel {
+    transition: opacity 0.3s ease, visibility 0s ease 0.3s;
+}
+.tabpanel.is-active {
+    transition: opacity 0.3s ease;
+}

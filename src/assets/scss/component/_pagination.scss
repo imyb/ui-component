@@ -1,14 +1,40 @@
 /* ==========================================================================
    pagination
    ========================================================================== */
-.pagination { text-align: center; }
-    .pagination ul { display: inline-block; list-style: none; margin: 0; padding: 0; }
-    .pagination ul:after { content: ''; display: table; clear: both; }
-    .pagination__item { float: left; }
-    .pagination__item a { display: inline-block; margin: -1px 0 0 -1px; padding: 10px 15px; border: 1px solid #ddd; color: #333; }
-    .pagination__item-first,
-    .pagination__item-prev,
-    .pagination__item-next,
-    .pagination__item-last {  }
-    .pagination__item a:hover { background-color: #f8f8f8; }
-    .pagination__item.is-active a { background-color: #f8f8f8; color: #000; font-weight: bold; }
+.pagination {
+    text-align: center;
+}
+.pagination ul {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.pagination ul:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.pagination__item {
+    float: left;
+}
+.pagination__item a {
+    display: inline-block;
+    margin: -1px 0 0 -1px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    color: #333;
+}
+.pagination__item-first,
+.pagination__item-prev,
+.pagination__item-next,
+.pagination__item-last {
+
+}
+.pagination__item a:hover {
+    background-color: #f8f8f8;
+}
+.pagination__item.is-active a { background-color: #f8f8f8;
+    color: #000;
+    font-weight: bold;
+}

@@ -1,3 +1,4 @@
+
 ;(function($, window) {
 
     'use strict';
@@ -37,13 +38,13 @@
                 MozTransition    : 'transitionend',
                 OTransition      : 'oTransitionEnd otransitionend',
                 transition       : 'transitionend'
-            }
+            };
 
         for( var name in transitionEndEventName ) {
             if( fakeelement.style[name] !== undefined ) {
                 return transitionEndEventName[name];
             }
-        };
+        }
 
         return false;
     }
@@ -69,6 +70,15 @@
     };
 
 
+    function getSiblings(element) {
+        var siblings = [];
+        var sibling = element.parentNode.firstChild;
+        for (; sibling; sibling = sibling.nextSibling) {
+            if (sibling.nodeType !== 1 || sibling === element) continue;
+            siblings.push(sibling);
+        }
+        return siblings;
+    }
 
 
     /* ==========================================================================
@@ -76,22 +86,80 @@
      * ========================================================================== */
     UI.tab = (function() {
 
-        /*var UI_NAME = 'UI.tab';
+        var UI_NAME = 'UI.tab';
 
-        var Selector = {
+        var SELECTOR = {
             TAB : '[data-ui-tab="tab"]',
-            PANEL : '[data-ui-tab="panel"]',
+            PANEL : '[data-ui-tab="panel"]'
         };
 
-        var State = {
+        var STATE = {
             IS_ACTIVE : 'active'
         };
 
-        var Event = {
+        var EVENT = {
             CLICK_OPEN : 'click.tab:open'
-        };*/
+        };
 
         var tab = {
+            handleTabClick : function(element) {
+                var _this = this;
+                var element = element[0] || element;
+
+                this.open(element);
+            },
+            open : function(element) {
+                var _this = this;
+                var element = element[0] || element;
+                var siblings = getSiblings(element.parentElement);
+                var target = this._getTarget(element);
+
+                if( target.item.classList.contains('is-active') ) {
+                    return;
+                }
+
+                target.item.classList.add('is-active');
+
+                if( target.panel ) {
+                    target.panel.classList.add('is-active');
+                }
+
+                for( var i in siblings ) {
+                    _this.close(siblings[i].childNodes[0]);
+                }
+            },
+            close : function(element) {
+                var target = this._getTarget(element);
+
+                if( target.item.classList.contains('is-active') ) {
+                    target.item.classList.remove('is-active');
+                }
+
+                if( target.panel ) {
+                    if( target.panel.classList.contains('is-active') ) {
+                        target.panel.classList.remove('is-active');
+                    }
+                }
+            },
+            _getTarget : function(element) {
+                var target = {};
+
+                target.item = element.parentElement;
+                target.panel = document.querySelector(SELECTOR.PANEL + '#'+ element.getAttribute('aria-controls'));
+
+                return target;
+            }
+        };
+
+        $(document).on(EVENT.CLICK_OPEN, SELECTOR.TAB, function(e) {
+            e.preventDefault();
+
+            tab.handleTabClick(this);
+        });
+
+        return tab;
+
+        /*var tab = {
             element : '[data-ui-tab="tab"]',
             panel : '[data-ui-tab="panel"]',
             open : function(element) {
@@ -141,7 +209,7 @@
             tab.open( this );
         });
 
-        return tab;
+        return tab;*/
     })();
 
 
@@ -164,7 +232,7 @@
             MODAL_WINDOW    : '.modal__window',
             MODAL_OPEN      : '[data-ui-modal="open"]',
             MODAL_CLOSE     : '[data-ui-modal="close"]'
-        }
+        };
 
         var State = {
             IS_MODAL_OPEN   : 'modal-open',
@@ -175,14 +243,14 @@
             IS_CURRENT      : 'is-current',
             IS_ACTIVE       : 'is-active',
             IS_PREVIUS      : 'is-previus'
-        }
+        };
 
         var Event = {
             CLICK_OPEN      : 'click.modal:open',
             CLICK_CLOSE     : 'click.modal:close',
             OPENED          : 'modal:opened',
             CLOSED          : 'modal:closed'
-        }
+        };
 
         var Modal = function(element) {
             this.element = element;
@@ -290,7 +358,7 @@
                 current = $(target).siblings(Selector.MODAL + '.' + State.IS_CURRENT)[0];
 
                 if( $(current).length ) {
-                    $(current).attr('data-scrolltop', $(current).find(Selector.MODAL_WINDOW).scrollTop())
+                    $(current).attr('data-scrolltop', $(current).find(Selector.MODAL_WINDOW).scrollTop());
                     $(current).find(Selector.MODAL_WINDOW).scrollTop( $(current).attr('data-scrolltop') );
                 } else {
                     $(window).scrollTop(_this.scrolltop);

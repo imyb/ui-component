@@ -4,6 +4,7 @@ const watch = require('gulp-watch');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
+const eslint = require('gulp-eslint');
 const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
 const ejsMonster = require('gulp-ejs-monster');
@@ -43,6 +44,7 @@ const PATH = {
             DIR.SRC + DIR.JS + 'script.js'
         ],
         JS_VENDOR : [
+            DIR.SRC + DIR.JS + 'vendor/polyfill.ie9.js',
             DIR.SRC + DIR.JS + 'vendor/jquery-1.12.4.min.js',
             DIR.SRC + DIR.JS + 'vendor/prism.js'
         ],
@@ -90,6 +92,13 @@ gulp.task('styles', function () {
  */
 gulp.task('scripts', ['scripts:vendor', 'scripts:pre_render_polyfill'], function () {
     return gulp.src( PATH.SRC.JS )
+        .pipe(eslint({
+            extends: 'eslint:recommended',
+            rules: {
+                'strict': 2
+            }
+        }))
+        .pipe(eslint.format('codeframe'))
         .pipe(sourcemaps.init())
         .pipe(concat('bundle.js'))
         .pipe(babel({
@@ -161,6 +170,8 @@ gulp.task('watch', function() {
     gulp.watch([ PATH.SRC.HTML ], ['html', browserSync.reload]);
     gulp.watch([ PATH.SRC.SCSS ], ['styles', browserSync.reload]);
     gulp.watch([ PATH.SRC.JS ], ['scripts', browserSync.reload]);
+    gulp.watch([ PATH.SRC.JS_VENDOR ], ['scripts:vendor', browserSync.reload]);
+    gulp.watch([ PATH.SRC.JS_PRE_RENDER_POLYFILL ], ['scripts:pre_render_polyfill', browserSync.reload]);
     gulp.watch([ PATH.SRC.IMG ], ['iamges', browserSync.reload]);
 });
 

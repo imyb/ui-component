@@ -1,46 +1,201 @@
 /* ==========================================================================
    button
    ========================================================================== */
-.btn { display: inline-block; overflow: visible; position: relative; min-width: 0; max-width: none; width: auto; min-height: 0; max-height: none; height: auto; line-height: normal; margin: 0; padding: 0; border: 0; border-radius: 0; background: none; color: #333; font: inherit; font-size: 14px; font-weight: normal; text-align: center; text-decoration: none; white-space: nowrap; vertical-align: middle; cursor: pointer; box-sizing: border-box; }
-    .btn .btn-text { display: inline-block; color: inherit; font: inherit; }
-    .btn.is-disabled,
-    .btn[disabled] { opacity: 0.4; cursor: not-allowed; }
+.btn {
+    display: inline-block;
+    overflow: visible;
+    position: relative;
+    min-width: 0;
+    max-width: none;
+    width: auto;
+    min-height: 0;
+    max-height: none;
+    height: auto;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    color: #333;
+    font: inherit;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    box-sizing: border-box;
+}
 
-    /* type */
-    .btn { height: 30px; line-height: 28px; padding: 0 10px; border: 1px solid #ddd; border-radius: 0; background-color: #f8f8f8; color: #333; font-size: 14px; }
-    .btn-default { height: 30px; line-height: 28px; padding: 0 10px; border: 1px solid #ddd; border-radius: 0; background-color: #f8f8f8; color: #333; font-size: 14px; }
-    .btn-primary { height: 30px; line-height: 28px; padding: 0 10px; border: 1px solid transparent; border-radius: 0; background-color: #96ceb4; color: #fff; font-size: 14px; }
-    .btn-secondary { height: 30px; line-height: 28px; padding: 0 10px; border: 1px solid #999; border-radius: 0; background-color: #fff; color: #333; font-size: 14px; }
+.btn .btn-text {
+    display: inline-block;
+    color: inherit;
+    font: inherit;
+}
 
-    /* color */
-    .btn-gray { border-color: transparent; background-color: #b2b2b2; color: #fff; }
-    .btn-dark { border-color: transparent; background-color: #3e4444; color: #fff; }
-    .btn-green { border-color: transparent; background-color: #96ceb4; color: #fff; }
-    .btn-red { border-color: transparent; background-color: #c94c4c; color: #fff; }
-    .btn-blue { border-color: transparent; background-color: #034f84; color: #fff; }
-    .btn-white { border-color: #ddd; background-color: #fff; color: #333; }
+.btn.is-disabled,
+.btn[disabled] {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
 
-    /* size */
-    .btn-xsmall { height: 20px; line-height: 18px; padding: 0 5px; font-size: 12px; }
-    .btn-small { height: 24px; line-height: 22px; padding: 0 10px; font-size: 14px; }
-    .btn-normal { height: 30px; line-height: 28px; padding: 0 10px; font-size: 14px; }
-    .btn-large { height: 36px; line-height: 34px; padding: 0 10px; font-size: 14px; }
-    .btn-xlarge { height: 40px; line-height: 38px; padding: 0 15px; font-size: 16px; }
-    .btn-block { display: block; width: 100%; }
+/* type */
+.btn {
+    height: 30px;
+    line-height: 28px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    font-size: 14px;
+}
+.btn-default {
+    height: 30px;
+    line-height: 28px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    font-size: 14px;
+}
+.btn-primary {
+    height: 30px;
+    line-height: 28px;
+    padding: 0 10px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    background-color: #96ceb4;
+    color: #fff;
+    font-size: 14px;
+}
+.btn-secondary {
+    height: 30px;
+    line-height: 28px;
+    padding: 0 10px;
+    border: 1px solid #999;
+    border-radius: 0;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+}
 
-    /* round */
-    .btn-round { border-radius: 30px; }
-    .btn-round.btn-xsmall { border-radius: 20px; }
-    .btn-round.btn-small { border-radius: 24px; }
-    .btn-round.btn-normal { border-radius: 30px; }
-    .btn-round.btn-large { border-radius: 36px; }
-    .btn-round.btn-Xlarge { border-radius: 40px; }
+/* color */
+.btn-gray {
+    border-color: transparent;
+    background-color: #b2b2b2;
+    color: #fff;
+}
+.btn-dark {
+    border-color: transparent;
+    background-color: #3e4444;
+    color: #fff;
+}
+.btn-green {
+    border-color: transparent;
+    background-color: #96ceb4;
+    color: #fff;
+}
+.btn-red {
+    border-color: transparent;
+    background-color: #c94c4c;
+    color: #fff;
+}
+.btn-blue {
+    border-color: transparent;
+    background-color: #034f84;
+    color: #fff;
+}
+.btn-white {
+    border-color: #ddd;
+    background-color: #fff;
+    color: #333;
+}
 
-    /* icon + text */
-    .btn .iconset { margin-right: 5px; }
-    .btn .btn-text + .iconset { margin-left: 5px; margin-right: 0; }
+/* size */
+.btn-xsmall {
+    height: 20px;
+    line-height: 18px;
+    padding: 0 5px;
+    font-size: 12px;
+}
+.btn-small {
+    height: 24px;
+    line-height: 22px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+.btn-normal {
+    height: 30px;
+    line-height: 28px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+.btn-large {
+    height: 36px;
+    line-height: 34px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+.btn-xlarge {
+    height: 40px;
+    line-height: 38px;
+    padding: 0 15px;
+    font-size: 16px;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
 
-    /* only icon */
-    .btnicon { /* min-width: 0; width: auto; height: auto; line-height: normal; */ /* padding: 4px; border: 0; border-radius: 0; background: none; */ }
-    .btnicon .iconset { margin: 0; }
-    .btnicon .btn-text { overflow: hidden; position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; clip: rect(0 0 0 0); -webkit-clip-path: inset(50%); clip-path: inset(50%); }
+/* round */
+.btn-round {
+    border-radius: 30px;
+}
+.btn-round.btn-xsmall {
+    border-radius: 20px;
+}
+.btn-round.btn-small {
+    border-radius: 24px;
+}
+.btn-round.btn-normal {
+    border-radius: 30px;
+}
+.btn-round.btn-large {
+    border-radius: 36px;
+}
+.btn-round.btn-Xlarge {
+    border-radius: 40px;
+}
+
+/* icon + text */
+.btn .iconset {
+    margin-right: 5px;
+}
+.btn .btn-text + .iconset {
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+/* only icon */
+.btnicon {
+
+}
+.btnicon .iconset {
+    margin: 0;
+}
+.btnicon .btn-text {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    lip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+}
