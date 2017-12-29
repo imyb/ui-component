@@ -104,6 +104,10 @@ gulp.task('scripts', ['scripts:vendor', 'scripts:pre_render_polyfill'], function
         .pipe(babel({
             presets: ['env']
         }))
+        .on('error', function(e) {
+             console.error(e.message);
+             this.emit('end');
+         })
         .pipe(gutil.env.type == 'prod' ? uglify() : gutil.noop())
         .pipe(sourcemaps.write())
         .pipe(gutil.env.type == 'prod' ? gulp.dest( PATH.DIST.JS ) : gulp.dest( PATH.TMP.JS ))

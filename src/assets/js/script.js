@@ -164,11 +164,6 @@
 
             tab.handleTabClick(element);
         });
-        // $(document).on(EVENT.CLICK_OPEN, SELECTOR.TAB, function(e) {
-        //     e.preventDefault();
-        //
-        //     tab.handleTabClick(this);
-        // });
 
         return tab;
 
