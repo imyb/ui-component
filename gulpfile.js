@@ -159,7 +159,7 @@ gulp.task('clean:tmp', function() {
 });
 
 gulp.task('clean:dist', function() {
-    return del.sync( DIR.DIST );
+    return del( DIR.DIST );
 });
 
 
