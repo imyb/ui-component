@@ -125,7 +125,7 @@
                 }
 
                 for( var i in siblings ) {
-                    _this.close(siblings[i].childNodes[0]);
+                    _this.close(siblings[i].children[0]);
                 }
             },
             close : function(element) {
@@ -151,11 +151,24 @@
             }
         };
 
-        $(document).on(EVENT.CLICK_OPEN, SELECTOR.TAB, function(e) {
+        document.addEventListener('click', function(e) {
             e.preventDefault();
+            if(!e.target.closest(SELECTOR.TAB)) return;
 
-            tab.handleTabClick(this);
+            var element = e.target.closest(SELECTOR.TAB);
+
+
+            if( !element ) {
+                return;
+            }
+
+            tab.handleTabClick(element);
         });
+        // $(document).on(EVENT.CLICK_OPEN, SELECTOR.TAB, function(e) {
+        //     e.preventDefault();
+        //
+        //     tab.handleTabClick(this);
+        // });
 
         return tab;
 

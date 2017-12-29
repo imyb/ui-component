@@ -45,6 +45,12 @@
     vertical-align: middle;
 }
 .tablist__item > a > span {
+    overflow: hidden;
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
 }
 .tablist__item.is-active {
     z-index: 2;
