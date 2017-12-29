@@ -177,7 +177,7 @@
                     </div>
                 </div>
 
-                <button class="tab02-eq3">tab02-03 open</button>
+                <button id="tab02-eq3">tab02-03 open</button>
             </div>
 
             <div class="docs-component__code language-markup"><script type="text/plain">
@@ -211,10 +211,10 @@
     <script src="../assets/js/vendor.js"></script>
     <script src="../assets/js/bundle.js"></script>
     <script>
-        $('.tab02-eq3').on('click', function(e) {
+        document.getElementById('tab02-eq3').addEventListener('click', function(e) {
             e.preventDefault();
 
-            UI.tab.open( $('#tab02-03') )
+            UI.tab.open( document.getElementById('tab02-03') )
         });
     </script>
 </body>
